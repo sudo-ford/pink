@@ -1,0 +1,484 @@
+.page-form {
+    width: 320px;
+    padding: 50px 0;
+    margin: 0 auto;
+
+    @media ($min-tablet-width) {
+        width: 660px;
+    }
+
+    @media ($min-desktop-width) {
+        width: 960px;
+        padding: 50px 10px;
+    }
+}
+
+.page-form__title {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 0 20px;
+
+    @media ($min-tablet-width) {
+        padding: 0 80px;
+        font-size: 18px;
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+
+    @media ($min-desktop-width) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+fieldset {
+    padding: 0;
+    margin: 0;
+}
+
+.form input[type="text"],
+.form input[type="tel"],
+.form input[type="email"],
+.form textarea {
+    border: 2px solid #e5e5e5;
+    transition: 0.5s;
+    outline: none;
+
+    &:hover {
+        border-color: $text-color;
+    }
+
+    &:focus {
+        border-color: $text-red;
+    }
+}
+
+.form__name {
+    border: none;
+    padding: 0 20px 30px;
+    order: 1;
+
+    @media ($min-tablet-width) {
+        padding: 0;
+        padding-bottom: 30px;
+    }
+
+    @media ($min-desktop-width) {
+        width: 435px;
+        padding: 0;
+    }
+}
+
+.form__name--wrapper {
+    @media ($min-tablet-width) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.form__name label {
+    color: $text-red;
+    text-transform: uppercase;
+    padding-left: 20px;
+
+    @media ($min-tablet-width) {
+        padding: 0;
+    }
+}
+
+.form__name input {
+    width: 100%;
+    padding: 20px;
+    margin: 10px 0;
+    font-size: 18px;
+
+    @media ($min-tablet-width) {
+        margin: 20px 0;
+        margin-left: 20px;
+    }
+}
+
+.form__app {
+    order: 4;
+    border: none;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 35px;
+
+    @media ($min-tablet-width) {
+        order: 2;
+        border: 2px solid #e5e5e5;
+        background-color: transparent;
+        padding: 40px;
+        margin-bottom: 30px;
+    }
+
+    @media ($min-desktop-width) {
+        width: 435px;
+        margin-bottom: 20px;
+    }
+}
+
+.form__app legend {
+    background-color: #f2f2f2;
+    text-align: center;
+    text-transform: uppercase;
+    color: red;
+    padding: 25px 20px;
+
+    @media ($min-tablet-width) {
+        background-color: transparent;
+        padding: 0 25px;
+    }
+
+    @media ($min-desktop-width) {
+        padding: 0 15px;
+    }
+}
+
+.form__app label {
+    padding-left: 90px;
+    margin-bottom: 30px;
+    position: relative;
+    transition: 0.2s;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: 30px;
+        width: 39px;
+        height: 39px;
+        border-radius: 50%;
+        border: 2px solid #e5e5e5;  
+        transition: border-color 0.5s;      
+    }
+
+    &:hover {
+        &::before {
+            border-color: $text-color;
+        }
+    }
+
+    &:active {
+        &::before {
+            border-color: $text-red;
+        }
+    }
+}
+
+.form__app input {
+    display: none;
+}
+
+.form__app input[id="app1"]:checked ~ label[for="app1"]::before,
+.form__app input[id="app2"]:checked ~ label[for="app2"]::before,
+.form__app input[id="app3"]:checked ~ label[for="app3"]::before {
+    background: url("../img/form-app.png") no-repeat center center;
+}
+
+.form__contacts {
+    order: 3;
+    border: none;
+    padding: 40px 20px;
+
+    @media ($min-tablet-width) {
+        border: 2px solid #e5e5e5;
+        padding: 40px;
+        margin-bottom: 30px;
+    }
+
+    @media ($min-desktop-width) {
+        width: 100%;
+        margin-top: 20px;
+        padding-bottom: 0;
+    }
+}
+
+.form__contacts--wrapper {
+    @media ($min-desktop-width) {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.form__contacts legend {
+    display: none;
+
+    @media ($min-tablet-width) {
+        display: block;
+        text-align: center;
+        padding: 0 25px;
+        text-transform: uppercase;
+        color: $text-red;
+    }
+}
+
+.form__contacts label {
+    text-transform: uppercase;
+    color: $text-red;
+    padding-left: 20px;
+
+    @media ($min-tablet-width) {
+        padding: 0;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            right: 2px;
+            top: -22px;
+            width: 61px;
+            height: 61px;
+        }
+    }
+
+    @media ($min-desktop-width) {
+        width: 375px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            right: 2px;
+            top: 2px;
+            width: 61px;
+            height: 61px;
+        }
+    }
+}
+
+.form__contacts label:nth-child(1)::before {
+    background: #e5e5e5 url("../img/tel-icon.png") no-repeat center center;
+}
+
+.form__contacts label:nth-child(2)::before {
+    background: #e5e5e5 url("../img/mail-icon.png") no-repeat center center;
+}
+
+.form__contacts input {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    border: 2px solid #e5e5e5;
+}
+
+.form__contacts--mobile {
+    @media ($min-tablet-width) {
+        display: none;
+    }
+}
+
+.form__contacts--other {
+    display: none;
+
+    @media ($min-tablet-width) {
+        display: block;
+        padding-left: 20px;
+        margin-bottom: 10px;
+    }
+}
+
+.form__progress {
+    order: 2;
+    border: none;
+    background-color: #f2f2f2;
+    display: flex;
+    padding: 20px 0;
+
+    @media ($min-tablet-width) {
+        order: 4;
+        background-color: transparent;
+        border: 2px solid #e5e5e5;
+        margin-bottom: 30px;
+        padding: 50px 60px;
+    }
+
+    @media ($min-desktop-width) {
+        padding: 30px;
+    }
+}
+
+.form__progress--wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @media ($min-desktop-width) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+.form__progress legend {
+    text-align: center;
+    background-color: #f2f2f2;
+    color: $text-red;
+    padding-top: 35px;
+
+    @media ($min-tablet-width) {
+        background-color: transparent;
+        padding: 0 25px;
+        text-transform: uppercase;
+    }
+}
+
+.form__progress input {
+    display: none;
+}
+
+.form__progress label {
+    font-size: 18px;
+    padding: 0 20px 0 90px;
+    margin: 20px 0;
+    position: relative;
+
+    @media ($min-desktop-width) {
+        padding: 0;
+        padding-left: 60px;
+        width: 290px;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: 30px;
+        width: 39px;
+        height: 39px;
+        border: 2px solid #e5e5e5;
+        background-color: #fff;
+        transition: border-color 0.5s;
+
+        @media ($min-desktop-width) {
+            left: 0;
+        }
+    }
+
+    &:hover {
+        &::before {
+            border-color: $text-color;
+        }
+    }
+
+    &:active {
+        &::before {
+            border-color: $text-red;
+        }
+    }
+}
+
+input[id="checkbox1"]:checked ~ label[for="checkbox1"]::before,
+input[id="checkbox2"]:checked ~ label[for="checkbox2"]::before,
+input[id="checkbox3"]:checked ~ label[for="checkbox3"]::before,
+input[id="checkbox4"]:checked ~ label[for="checkbox4"]::before,
+input[id="checkbox5"]:checked ~ label[for="checkbox5"]::before,
+input[id="checkbox6"]:checked ~ label[for="checkbox6"]::before {
+    background: #fff url("../img/form-progress.png") no-repeat center center;
+} 
+
+.form__feedback {
+    order: 5;
+    border: none;
+    padding: 0 20px 50px;
+
+    @media ($min-tablet-width) {
+        border: 2px solid #e5e5e5;
+        padding: 50px;
+        margin-bottom: 60px;
+    }
+
+    @media ($min-desktop-width) {
+        width: 100%;
+    }
+}
+
+.form__feedback legend {
+    text-align: center;
+    color: red;
+    text-transform: uppercase;
+    padding: 30px 0;
+
+    @media ($min-tablet-width) {
+        padding: 0 25px;
+    }
+}
+
+.form__feedback textarea {
+    width: 100%;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.form__submit {
+    order: 6;
+    padding: 0 20px 30px;
+
+    @media ($min-tablet-width) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+    }
+
+    @media ($min-desktop-width) {
+        width: 100%;
+    }
+}
+
+.form__submit input {
+    @include button-reset;
+    width: 280px;
+    padding: 23px 0;
+    font-size: 18px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 15px;
+    background-color: #2aab6d;
+    transition: 0.5s;
+
+    @media ($min-tablet-width) {
+        width: 300px;
+        margin: 0;
+    }
+
+    &:hover {
+        background-color: #1c9b5e;
+    }
+
+    &:active {
+        color: rgba($color: #fff, $alpha: 0.3);
+    } 
+
+    &:disabled {
+        background-color: #e5e5e5;
+    }
+}
+
+.form__submit p {
+    text-align: center;
+
+    @media ($min-tablet-width) {
+        width: 300px;
+        text-align: right;
+    }
+}
+
+.form__submit--desktop {
+    display: none;
+
+    @media ($min-desktop-width) {
+        display: inline;
+    }
+}
+
+.form__submit--red {
+    color: $text-red;
+}

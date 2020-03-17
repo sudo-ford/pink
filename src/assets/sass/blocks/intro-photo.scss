@@ -1,0 +1,36 @@
+.intro-photo {
+    width: 320px;
+    min-height: 240px;
+    margin: 0 auto;
+    margin-top: -65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../img/back-photo-mobile.jpg") no-repeat;
+
+    @media ($min-tablet-width) {
+        width: 660px;
+        min-height: 440px;
+        margin-top: -110px;
+        background: url("../img/back-photo-tablet.jpg") no-repeat;
+    }
+
+    @media ($min-desktop-width) {
+        width: 1200px;
+        min-height: 400px;
+        margin-top: -126px;
+        background: url("../img/back-photo-desktop.jpg") no-repeat;
+    }
+}
+
+.intro-photo__title {
+    font-size: 24px;
+    line-height: 120%;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+
+    @media ($min-tablet-width) {
+        font-size: 50px;
+    }
+}

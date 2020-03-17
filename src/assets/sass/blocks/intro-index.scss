@@ -1,0 +1,122 @@
+.intro-index {
+    width: 320px;
+    min-height: 733px;
+    display: flex;
+    flex-direction: column;
+    margin: -65px auto 0 auto;
+    background: $bg-dark-blue url("../img/back-mobile@1x.jpg") no-repeat;
+
+    @media ($min-tablet-width) {
+        flex-direction: row;
+        align-items: flex-end;
+        width: 660px;
+        margin-top: -110px;
+        background: $bg-dark-blue url("../img/back-tablet@1x.jpg") no-repeat;
+    }
+
+    @media ($min-desktop-width) {
+        width: 1200px;
+        min-height: 850px;
+        align-items: center;
+        padding: 0 120px;
+        margin-top: -126px;
+        background: $bg-dark-blue url("../img/back-desktop.jpg") no-repeat;
+    }
+}
+
+.intro-index__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 29px 20px 33px 20px;
+    margin-top: auto;
+    background-color: $bg-dark-blue;
+
+    @media ($min-tablet-width) {
+        width: 300px;
+        margin: 0;
+        padding: 0;
+        padding-bottom: 115px;
+        background-color: transparent;
+    }
+
+    @media ($min-desktop-width) {
+        padding: 0;    
+    }
+}
+
+.intro-index__title {
+    font-size: 40px;
+    line-height: 120%;
+    color: $text-white;
+    text-align: center;
+    display: none;
+
+    @media ($min-tablet-width) {
+        display: block;
+    }
+}
+
+.intro-index__link {
+    display: block;
+    padding: 20px 40px;
+    border: 3px solid #fff;
+    font-size: 18px;
+    line-height: 18px;
+    color: $text-white;
+    border-radius: 29px;
+    transition: color 0.5s ease,
+                background-color 0.5s ease;
+
+    &:hover {
+        color: $text-red;
+        background-color: #fff;
+    }
+
+    &:active {
+        opacity: 0.3;
+    }
+
+    @media ($min-tablet-width) {
+        margin-top: 40px;
+    }
+
+    @media ($min-desktop-width) {
+        margin-top: 65px;
+    }
+}
+
+.intro-index__icons {
+    width: 205px;
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+
+    @media ($min-tablet-width) {
+        margin-top: 45px;
+    }
+
+    @media ($min-desktop-width) {
+        margin-top: 65px;
+    }
+}
+
+.intro-index__text {
+    line-height: 24px;
+    color: $text-white;
+    padding: 0;
+    margin: 0;
+    margin-top: 25px;
+    text-align: center;
+
+    @media ($min-tablet-width) {
+        margin-top: 40px;
+    }
+
+    @media ($min-desktop-width) {
+        margin-top: 60px;
+    }
+}

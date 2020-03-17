@@ -1,0 +1,327 @@
+.upload {
+    width: 320px;
+    margin: 0 auto;
+    padding-top: 25px;
+
+    @media ($min-tablet-width) {
+        width: 660px;
+    }
+
+    @media ($min-desktop-width) {
+        width: 1200px;
+    }
+}
+
+.upload__title {
+    text-align: center;
+    margin-bottom: 40px;
+
+    @media ($min-tablet-width) {
+        font-size: 18px;
+    }
+}
+
+.upload__editor {
+    padding: 20px;
+    padding-bottom: 40px;
+    background-color: #f2f2f2;
+
+    @media ($min-tablet-width) {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 20px;
+    }
+
+    @media ($min-desktop-width) {
+        width: 940px;
+        margin: 0 auto;
+        padding: 60px;
+        padding-left: 80px;
+    }
+}
+
+.upload__editor picture {
+    @media ($min-tablet-width) {
+        width: 300px;
+    }
+}
+
+.upload__editor picture img {
+    @media ($min-tablet-width) {
+        height: 100%;
+    }
+}
+
+.upload__settings {
+    margin-top: 20px;
+
+    @media ($min-tablet-width) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0 20px 0 25px;
+        width: 300px;
+        margin-top: 0;
+    }
+
+    @media ($min-desktop-width) {
+        width: 410px;
+        padding: 0;
+    }
+}
+
+.upload__ranges {
+    border: none;
+    padding: 0 20px;
+    margin: 0;
+}
+
+.upload__ranges input[type="range"] {
+    appearance: none;
+    position: relative;
+    width: 240px;
+    height: 2px;
+    display: none;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: $text-color;
+
+    @media ($min-tablet-width) {
+        width: 200px;
+        margin-left: 35px;
+        margin-bottom: 70px;
+        display: block;
+    }
+
+    @media ($min-desktop-width) {
+        width: 290px;
+        margin-left: 90px;
+        margin-bottom: 80px;
+        margin-top: 20px;
+    }
+}
+
+.upload__ranges input[name="crop"] {
+    display: block;
+}
+
+.upload__ranges input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width:14px;
+    height:14px;
+    background:#f2f2f2;
+    border-radius:50%;
+    border: 2px solid $text-red;
+    cursor:pointer;
+    transition:.1s;
+}
+
+input[name="crop"] {
+    display: block;
+}
+
+input[name="crop"]::before {
+    @media ($min-tablet-width) {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: -50px;
+        display: block;
+        width: 22px;
+        height: 22px;
+        background: url("../img/crop.svg") no-repeat;  
+    }
+
+    @media ($min-desktop-width) {
+        width: 44px;
+        height: 44px;
+        left: -115px;
+        top: -20px; 
+    }
+}
+
+input[name="fill"]::before {
+
+    @media ($min-tablet-width) {
+        content: "";
+        position: absolute;
+        top: -7px;
+        left: -48px;
+        display: block;
+        width: 24px;
+        height: 22px;
+        background: url("../img/fill.svg") no-repeat;
+    }
+
+    @media ($min-desktop-width) {
+        width: 48px;
+        height: 43px;
+        left: -115px;
+        top: -15px;   
+    }
+}
+
+input[name="contrast"]::before {
+    
+    @media ($min-tablet-width) {
+        content: "";
+        position: absolute;
+        left: -46px;
+        top: -6px;
+        display: block;
+        width: 16px;
+        height: 16px;
+        background: url("../img/contrast.svg") no-repeat;
+    }
+
+    @media ($min-desktop-width) {
+        width: 32px;
+        height: 32px;
+        left: -110px;
+        top: -13px;   
+    }
+}
+
+.upload__ranges .input-range--block {
+    display: block;
+}
+
+.upload__toggle {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    @media ($min-tablet-width) {
+        display: none;
+    }
+}
+
+.upload__toggle input {
+    display: none;
+}
+
+.upload__toggle label {
+    display: block;
+}
+
+.crop {
+    width: 44px;
+    height: 44px;
+    background: url("../img/crop-black.svg") no-repeat;
+    opacity: 0.3;
+    transition: 0.5s;
+
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+.fill {
+    width: 48px;
+    height: 43px;
+    background: url("../img/fill-black.svg") no-repeat;
+    opacity: 0.3;
+    transition: 0.5s;
+
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+.contrast {
+    width: 32px;
+    height: 32px;
+    background: url("../img/contrast-black.svg") no-repeat;
+    opacity: 0.3;
+    transition: 0.5s;
+
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+#upload-1:checked ~ .crop {
+    background-image: url("../img/crop.svg");
+    opacity: 1;
+}
+
+#upload-2:checked ~ .fill {
+    background-image: url("../img/fill.svg");
+    opacity: 1;
+}
+
+#upload-3:checked ~ .contrast {
+    background-image: url("../img/contrast.svg");
+    opacity: 1;
+}
+
+#upload-1:checked ~ .upload__ranges input[name="crop"] {
+    display: block;
+}
+
+#upload-2:checked ~ .upload__ranges input[name="fill"] {
+    display: block;
+}
+
+#upload-3:checked ~ .upload__ranges input[name="contrast"] {
+    display: block;
+}
+
+.upload__buttons {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.upload__buttons button {
+    display: inline-block;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 35px;
+    font-size: 18px;
+    line-height: 18px;
+    margin-top: 15px;
+    transition: 0.5s;
+    background-color: transparent;
+
+    @media ($min-desktop-width) {
+        width: 185px;
+    }
+}
+
+.upload__buttons button[type="submit"] {
+    border: 3px solid $text-red;
+    color: $text-red;
+
+    &:hover {
+        background-color: $text-red;
+        color: #fff;
+    }
+
+    &:active {
+        background-color: $text-red;
+        color: rgba(255, 255, 255, 0.3);
+    }
+
+    @media ($min-desktop-width) {
+        margin-right: 36px;
+    }
+}
+
+.upload__buttons button[type="reset"] {
+    border: 3px solid $text-color;
+    color: $text-color;
+    opacity: 0.1;
+
+    &:hover {
+        background-color: $text-red;
+        opacity: 0.3;
+    }
+
+    &:active {
+        background-color: $text-color;
+        color: #fff;
+        opacity: 0.3;
+    }
+}

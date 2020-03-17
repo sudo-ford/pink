@@ -1,0 +1,43 @@
+.map {
+    margin: 0 auto;
+    width: 320px;
+    height: 200px;
+    position: relative;
+
+    @media ($min-tablet-width) {
+        width: 660px;
+        height: 375px;
+    }
+
+    @media ($min-desktop-width) {
+        width: 1200px;
+        height: 500px;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: url("../img/map-top.png") no-repeat;
+        background-size: cover;
+        z-index: 1;
+        height: 35px;
+
+        @media ($min-tablet-width) {
+            height: 70px;
+        }
+    
+        @media ($min-desktop-width) {
+            height: 125px;
+        }
+    }
+}
+
+.map iframe {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+}

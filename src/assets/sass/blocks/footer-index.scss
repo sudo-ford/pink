@@ -1,0 +1,112 @@
+.footer-index {
+    width: 320px;
+    min-height: 285px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 40px 20px;
+
+    @media ($min-tablet-width) {
+        flex-direction: row;
+        width: 660px;
+        padding: 20px 0;
+        min-height: 125px;
+    }
+
+    @media ($min-desktop-width) {
+        width: 1200px;
+        min-height: 200px;
+        padding: 0 130px;
+    }
+}
+
+.footer__logo--tablet {
+    @media ($min-desktop-width) {
+        display: none;
+    }
+}
+
+.footer__logo--desktop {
+    display: none;
+
+    @media ($min-desktop-width) {
+        display: block;
+    }
+
+    & .pink {
+        fill: $text-color;
+        transition: fill 0.5s;
+    }
+
+    & .st1 {
+        fill: $text-color;
+    }
+
+    &:hover > .pink {
+        fill: $text-red;
+    }
+
+    &:active {
+        opacity: 0.3;
+    }
+}
+
+.footer__logo--tablet g {
+    fill: $text-color;
+    transition: fill 0.5s;
+}
+
+.footer__logo--tablet:hover > g {
+    fill: $text-red;
+}
+
+.footer__logo--tablet:active {
+    opacity: 0.3;
+}
+
+.socials {
+    min-width: 175px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.socials a {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #e9ebec;
+    justify-content: center;
+    align-items: center;
+    transition: border-color 0.5s;
+
+    &:hover {
+        border-color: $text-color;
+    }
+
+    &:active {
+        opacity: 0.3;
+    }
+}
+
+.htmlacademy__icon {
+    margin-left: 20px;
+}
+
+.developer {
+    display: flex;
+}
+
+.developer svg {
+    transition: fill 0.5s;
+
+    &:hover {
+        fill: $text-color;
+    }
+
+    &:active {
+        opacity: 0.3;
+    }
+}

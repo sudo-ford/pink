@@ -1,0 +1,226 @@
+.price input[type="radio"] {
+    display: none;
+}
+
+.price .slider-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 60px;
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media ($min-tablet-width) {
+        display: none;
+    }
+}
+
+.price label {
+    display: inline-block;
+    margin: 0 3px;
+    width: 12px;
+    height: 12px;
+    border: 3px solid white;
+    border-radius: 50%;
+    background-color: #bec2c7;
+    cursor: pointer;
+    transition: background-color 0.2s,
+                border-color 0.2s;
+
+    &:hover {
+        background-color: $text-color;
+    }
+
+    &:active {
+        opacity: 0.3;
+    }
+}
+
+#price-1:checked ~ .slider-controls label[for="price-1"],
+#price-2:checked ~ .slider-controls label[for="price-2"],
+#price-3:checked ~ .slider-controls label[for="price-3"] {
+    background-color: #fff;
+    border-color: $text-color;
+}
+
+.price {
+    width: 320px;
+    position: relative;
+    padding: 90px 0 100px 0;
+    margin: 0 auto;
+    background: url("../img/info-bg.png") no-repeat;
+    background-size: cover;
+    overflow: hidden;
+
+    @media ($min-tablet-width) {
+        width: 660px;
+        padding: 90px 20px 70px;
+    }
+
+    @media ($min-desktop-width) {
+        width: 1200px;
+        padding: 150px 0 100px;
+    }
+}
+
+.price__table {
+    @media ($min-tablet-width) {
+        margin: 0 auto;
+    }
+}
+
+.table {
+    border-collapse: collapse;
+    width: 1120px;
+    transition: all 1s ease;
+
+    @media ($min-tablet-width) {
+        transform: translateX(0);
+        width: 620px;
+    }
+
+    @media ($min-desktop-width) {
+        width: 940px;
+    }
+}
+
+.table th,
+.table td {
+    border: 2px solid #e5e5e5;
+    width: 280px;
+    height: 60px;
+    text-align: center;
+
+    @media ($min-tablet-width) {
+        width: 25%;
+        height: 45px;
+        background-color: #fff;
+    }
+
+    @media ($min-desktop-width) {
+        height: 60px;
+    }
+}
+
+.table th {
+    height: 100px;
+
+    @media ($min-tablet-width) {
+        height: 80px;
+
+    }
+
+    @media ($min-desktop-width) {
+        height: 100px;
+    }
+}
+
+.table .table__hit {
+    border: 2px solid #e5e5e5;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 560px;
+        width: 73px;
+        height: 73px;
+        background: url("../img/table-hit.png") no-repeat;
+
+        @media ($min-tablet-width) {
+            width: 60px;
+            height: 60px;
+            top: 2px;
+            left: 311px;
+            background: url("../img/table-hit-tablet.png") no-repeat;
+        }
+
+        @media ($min-desktop-width) {
+            width: 73px;
+            height: 73px;
+            left: 471px;
+            background: url("../img/table-hit.png") no-repeat;
+        }
+    }
+}
+
+.table img {
+    vertical-align: middle;
+}
+
+.table th {
+    background-color: $text-color;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+
+    @media ($min-desktop-width) {
+        font-size: 18px;
+    }
+}
+
+.table__price {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 300;
+
+    @media ($min-desktop-width) {
+        font-size: 24px;
+    }
+}
+
+.table .table__empty {
+    background-color: #f2f2f2;
+    border: none;
+}
+
+.table__mobile {
+
+    @media ($min-tablet-width) {
+        display: none;
+    }
+}
+
+.table .table__no-mobile {
+    @media ($min-tablet-width) {
+        text-align: left;
+        padding-left: 22px;
+    }
+}
+
+.table__mobile-wrapper {
+    width: 240px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+
+    @media ($min-tablet-width) {
+        width: auto;
+        display: block;
+    }
+}
+
+#price-1:checked ~ .table {
+    transform: translateX(-260px);
+
+    @media ($min-tablet-width) {
+        transform: translateX(0);
+    }
+}
+
+#price-2:checked ~ .table {
+    transform: translateX(-540px);
+
+    @media ($min-tablet-width) {
+        transform: translateX(0);
+    }
+}
+
+#price-3:checked ~ .table {
+    transform: translateX(-820px);
+
+    @media ($min-tablet-width) {
+        transform: translateX(0);
+    }
+}
